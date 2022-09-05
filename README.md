@@ -102,8 +102,7 @@ const encryptedSymmetricKey = await window.litNodeClient.saveEncryptionKey({
 })
 ```
 
-12. The obtained HTML is stored in a Digital Twin NFT (DT-NFT), an [ERC 1155 Locked HTML NFT](https://developer.
-    litprotocol.com/ToolsAndExamples/SDKExamples/HTMLNfts).
+12. The obtained HTML is stored in a Digital Twin NFT (DT-NFT), an [ERC 1155 Locked HTML NFT](https://developer.litprotocol.com/ToolsAndExamples/SDKExamples/HTMLNfts).
 13. The DT-NFT is stored on IPFS vs Pinata or nft.storage.
 
 ```javascript
@@ -131,7 +130,6 @@ const fileUrl = `https://ipfs.io/ipfs/${ipfsCid}`
 ```
 
 14. The NFT contract, price, image, and sale status is stored using TableLand.
-15. TableLand is a Ceramic-based NFT marketplace that allows users to list NFTs for sale, and buy them with a single click.
 16. If someone (encrypted and stored on Ceramic and accessible via DID linked to your wallet)
 17. Your data will then be listed in the data marketplace
 18. A data buyer such as a pharmaceutical or insurance company purchases your data set
