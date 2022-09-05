@@ -2,7 +2,7 @@
 
 ***A Free Market for Accelerating Scientific Discovery***
 
-![image.png](assets/desci-exchange-screenshot.png)
+![desci-exchange-screenshot](assets/desci-exchange-screenshot.png)
 
 ## Benefits
 
@@ -41,6 +41,14 @@
 6. A data buyer such as a pharmaceutical or insurance company purchases your data set
 7. You get 99% of the tokens, the app receives 0.5%, and DeSci Exchange DAO token holders receive 0.5%
 
+## Types of NFTs
+
+1. **Digital Twin NFTs (DT-NFT)** - A DT-NFT is a soul-bound digital representation of a real-world object. For
+   example, a
+   DT-NFT could represent a person, a car, a house, or a piece of art. DT-NFTs are minted by the owner of the real-world object and can be transferred to other owners. DT-NFTs can be used to represent any real-world object that can be uniquely identified and tracked.
+2. **Data NFTs** - These are NFTs that represent a data set. They are created when a user sells their data. They are owned by the user who sold the data.
+3. **Data Access NFTs** - These are NFTs that represent a data set and a set of permissions. They are created when a user sells their data and sets permissions. They are owned by the user who sold the data.
+
 ## Detailed Technical Flow
 
 1. The user clicks to connect your Metamask wallet at [desci.exchange](https://desci.exchange) links to the user's
@@ -61,7 +69,7 @@ const variables = await fetch(
 ).then((res) => res.json());
 ```
 
-9. The user sees a [list of variables](https://api.curedao.org/api/v3/variables?accessToken=demo) whose measurements they can to sell. 
+9. The user sees a [list of variables](https://api.curedao.org/api/v3/variables?accessToken=demo) whose measurements they can to sell.
    ![variables.png](variables.png)
 10. They can click a "Sell Data" button set a price, and click submit.
 11. A GET request is made to the `variable.url` to fetch an HTML mega-study for that variable including data
@@ -130,11 +138,10 @@ const fileUrl = `https://ipfs.io/ipfs/${ipfsCid}`
 ```
 
 14. The NFT contract, price, image, and sale status is stored using TableLand.
-16. If someone (encrypted and stored on Ceramic and accessible via DID linked to your wallet)
-17. Your data will then be listed in the data marketplace
-18. A data buyer such as a pharmaceutical or insurance company purchases your data set
-19. You get 99% of the tokens, the app receives 0.5%, and DeSci Exchange DAO token holders receive 0.5%
-
+15. All NFTs for all users are fetched from Tableland and listed on the "Data Marketplace" page
+    ![desci-exchange-screenshot](assets/desci-exchange-screenshot.png)
+16. A data buyer such as a pharmaceutical or insurance company purchases a data set
+17. You get 99% of the tokens, the app receives 0.5%, and DeSci Exchange DAO token holders receive 0.5%
 
 ## Technologies Used
 
@@ -147,6 +154,35 @@ const fileUrl = `https://ipfs.io/ipfs/${ipfsCid}`
 - Ceramic - Composable data layer
 - Lit Protocol - Decentralized token, NFT, and DID-based access control for private data and applications
 
-## EthOnline2022
+## Types of NFTs
 
-[ethglobal.com/events/ethonline2022](https://ethglobal.com/events/ethonline2022)
+### 1. Digital Twin NFTs
+
+Digital Twin NFTs (DT-NFTs) are ERC 1155 soul-bound token NFTs data set and a set of permissions. DT-NFTs are created when a user first logs into the app.
+
+
+DT-NFTs are comprised of the following components:
+
+- **Transactional ID**: Tracks all user data related to transaction history. Its basic unit is the wallet address. Finally, the main incentive for protocols to request this data is: Risk Mitigation and network benefits.
+- **Personal ID**: Tracks a users biometric/legal verification data. Its basic unit is an individual.
+  The main incentive to store and use this type of data is sybil attack resistance, legal compliance and sensitive data exchange.
+- **Collateralized ID**: Tracks user data related to asset ownership and staking history.
+  The main unit of measurement is the asset. The main incentive for using this type of ID is to have users provide skin-in-the-game to prove membership/proper participation in a particular community.
+- **Social ID**: As mostly seen on Web 2.0 social networks, this type of ID tracks user activity related to social behaviors: level of interaction with certain types of content, likes, retweets, etc.Its basic unit is the persona (a user can have multiple personas for different apps). The main incentive to store this type of data is to prove a user has particular interests and is engaged with a particular community.
+- **Reputational ID**: Tracks user data related to a users track record. The on-chain equivalent of a CV or resume. Its
+  measurement unit is the number of accolades/accomplishments/experiences a user has.
+  The incentive for collecting this type of data is to prove a user’s track record, ensuring high contributor quality, experiential history verification and automated background checks.
+- **Data IDs**: This type of data focuses on on-chain and off-chain storage mapping. It is a layer beneath to what a user
+  would directly interact/influence.
+  It provides the raw on/off chain data for user identity to be classified under the buckets presented above.
+
+## References
+
+1. [ethglobal.com/events/ethonline2022](https://ethglobal.com/events/ethonline2022)
+2. [https://docs.unlock-protocol.com/tutorials/building-token-gated-applications](https://docs.unlock-protocol.com/tutorials/building-token-gated-applications)
+3. [Token-gating Express.js](https://docs.unlock-protocol.com/tutorials/backend-locking-with-express.js)
+4.
+
+
+
+#
