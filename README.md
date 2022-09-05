@@ -45,7 +45,7 @@
 
 1. The user clicks to connect your Metamask wallet at [desci.exchange](https://desci.exchange) links to the user's
    Ceramic DID with the [Self.ID SDK](https://developers.ceramic.network/reference/self-id/)
-2. The user on one of the 3rd party data sources like Fitbit or Oura to connect your account.
+2. The user clicks the "Import" button on one of the 3rd party data sources like Fitbit or Oura to connect their account.
 3. The user is redirected to the 3rd party data source to authenticate and authorize the app to access their data.
 4. The user is redirected back to the backend server, with an authorization code.
 5. The backend server exchanges the authorization code for an access token
