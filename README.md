@@ -43,11 +43,8 @@
 
 ## Types of NFTs
 
-1. **Digital Twin NFTs (DT-NFT)** - A DT-NFT is a soul-bound digital representation of a real-world object. For
-   example, a
-   DT-NFT could represent a person, a car, a house, or a piece of art. DT-NFTs are minted by the owner of the real-world object and can be transferred to other owners. DT-NFTs can be used to represent any real-world object that can be uniquely identified and tracked.
-2. **Data NFTs** - These are NFTs that represent a data set. They are created when a user sells their data. They are owned by the user who sold the data.
-3. **Data Access NFTs** - These are NFTs that represent a data set and a set of permissions. They are created when a user sells their data and sets permissions. They are owned by the user who sold the data.
+1. **Digital Twin NFTs (DT-NFT)** - An DT-NFT is a digital representation you in the form of an ERC 1155 token. A DT-NFT is minted once the first time the user logs into DeSci.Exchange. 
+2. **Data Access NFTs** - These are ERC 1155 NFTs that represent a data set such as some time series data of symptom severity recordings or when you took a specific medication. They are created when you click to sell a data set and are sent to your wallet or Digital Twin Safe. These NFT's can be sold on the DeSci.Exchange.  The possession of these NFTs grant access to the associated data set.
 
 ## Detailed Technical Flow
 
@@ -181,8 +178,3 @@ DT-NFTs are comprised of the following components:
 1. [ethglobal.com/events/ethonline2022](https://ethglobal.com/events/ethonline2022)
 2. [https://docs.unlock-protocol.com/tutorials/building-token-gated-applications](https://docs.unlock-protocol.com/tutorials/building-token-gated-applications)
 3. [Token-gating Express.js](https://docs.unlock-protocol.com/tutorials/backend-locking-with-express.js)
-4.
-
-
-
-#
