@@ -2,14 +2,14 @@
 
 ***A Free Market for Accelerating Scientific Discovery***
 
-![desci-exchange-screenshot](assets/desci-exchange-screenshot.png)
+![desci-exchange-screenshot](assets/desci-exchange-how-it-works.png)
 
 ## Benefits
 
 ### For Individuals
 
-- eBay for health data - You can earn \$\$\$ by selling your data regarding symptoms, treatments, and factors
-  to pharmaceutical companies, insurance companies, and other data buyers
+- eBay for health data - You can earn magic internet money by selling your data regarding symptoms, treatments, and 
+  factors to pharmaceutical companies, insurance companies, and other data buyers
 - Control access and use of your data through fine-grained permissions
 - Continuously monitor and audit the data you provide to other organizations
 
@@ -156,7 +156,6 @@ const fileUrl = `https://ipfs.io/ipfs/${ipfsCid}`
 ### 1. Digital Twin NFTs
 
 Digital Twin NFTs (DT-NFTs) are ERC 1155 soul-bound token NFTs data set and a set of permissions. DT-NFTs are created when a user first logs into the app.
-
 
 DT-NFTs are comprised of the following components:
 
