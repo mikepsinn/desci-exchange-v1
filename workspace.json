@@ -1,5 +1,8 @@
 {
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
-  "projects": {}
+  "projects": {
+    "connect": "packages/connect",
+    "connect-e2e": "packages/connect-e2e"
+  }
 }
