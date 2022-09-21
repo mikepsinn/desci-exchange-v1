@@ -31,5 +31,6 @@
   },
   "cli": {
     "defaultCollection": "@nxext/stencil"
-  }
+  },
+  "defaultProject": "server"
 }

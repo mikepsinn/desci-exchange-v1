@@ -14,6 +14,8 @@ A JavaScript library for building user interfaces.
 ### StencilJs
 [Stencil](https://stenciljs.com/) is for building reusable, scalable Design Systems with standards based Web Components.
 
+- https://github.com/spruceid/siwe-notepad
+- 
 
 🔎 **Smart, Fast and Extensible Build System**
 

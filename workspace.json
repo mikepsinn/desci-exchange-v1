@@ -4,6 +4,7 @@
   "projects": {
     "connect": "packages/connect",
     "connect-e2e": "packages/connect-e2e",
-    "core": "packages/core"
+    "core": "packages/core",
+    "server": "packages/server"
   }
 }
