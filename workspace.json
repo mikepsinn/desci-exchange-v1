@@ -3,6 +3,7 @@
   "version": 2,
   "projects": {
     "connect": "packages/connect",
-    "connect-e2e": "packages/connect-e2e"
+    "connect-e2e": "packages/connect-e2e",
+    "core": "packages/core"
   }
 }

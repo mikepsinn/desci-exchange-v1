@@ -14,7 +14,11 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@desci-exchange/core": ["dist/libs/core"],
+      "@desci-exchange/core/*": ["dist/libs/core/dist/components/*"],
+      "@desci-exchange/core/loader": ["dist/libs/core/loader"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

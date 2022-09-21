@@ -1,7 +1,7 @@
 {
   "extends": "nx/presets/npm.json",
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
-  "npmScope": "curedao",
+  "npmScope": "desci-exchange",
   "affected": {
     "defaultBase": "master"
   },
@@ -28,5 +28,8 @@
     "lint": {
       "inputs": ["default", "{workspaceRoot}/.eslintrc.json"]
     }
+  },
+  "cli": {
+    "defaultCollection": "@nxext/stencil"
   }
 }
