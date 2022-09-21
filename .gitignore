@@ -37,4 +37,4 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
-/assets/desci-exchange-banner-logo.eps
+!desci-exchange-banner-logo.eps
