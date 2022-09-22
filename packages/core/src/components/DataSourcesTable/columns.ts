@@ -1,0 +1,38 @@
+import { List } from 'immutable'
+
+export const ICON_ID = 'icon'
+export const DETAILS_ID = 'details'
+export const EDIT_ENTRY_BUTTON = 'edit-entry-btn'
+export const REMOVE_ENTRY_BUTTON = 'remove-entry-btn'
+export const SEND_ENTRY_BUTTON = 'send-entry-btn'
+
+type DataSourcesColumn = {
+  id: string
+  order: boolean
+  disablePadding?: boolean
+  label: string
+  width?: number
+  custom?: boolean
+}
+
+export const generateColumns = (): List<DataSourcesColumn> => {
+  const iconColumn = {
+    id: ICON_ID,
+    order: false,
+    disablePadding: false,
+    label: '',
+    width: 400,
+    custom: false,
+    align: 'center',
+  }
+
+  const DetailColumn = {
+    id: DETAILS_ID,
+    order: false,
+    disablePadding: false,
+    label: 'Data Sources',
+    custom: false,
+  }
+
+  return List([iconColumn, DetailColumn])
+}
