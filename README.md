@@ -1,4 +1,46 @@
-# DeSci Exchange
+# The DeSci Exchange
+
+***A Free Market for Accelerating Scientific Discovery***
+
+![how-it-works](https://user-images.githubusercontent.com/2808553/190667341-ce6fc007-1392-4dd1-8c98-35966eb62e56.png)
+
+## Benefits
+
+### For Individuals
+
+- eBay for health data - You can earn magic internet money by selling your data regarding symptoms, treatments, and
+  factors to pharmaceutical companies, insurance companies, and other data buyers
+- Control access and use of your data through fine-grained permissions
+- Continuously monitor and audit the data you provide to other organizations
+
+### For Health Apps
+
+- Connected real-world data yields better insights for your users
+- Apps that embed the exchange in their app earn a 0.5% transaction fee for each data sale
+- Connect to third-party sources to enrich your data, or easily connect to a user's existing data
+
+### For Pharmaceutical Companies
+
+- Conduct long-term safety and effectiveness studies by linking their clinical trial data to medical claims and electronic health record data
+- Refine models for finding rare disease patients by linking diagnostic lab, genomic, and imaging data
+- Discover new therapeutic candidates with connected data
+
+### For Insurers
+
+- Improve value-based care analytics and sharpen total cost of care estimates by linking to EHR and clinical data
+- Connect to the nation's largest ecosystem of health data
+- Hone risk adjustment factor calculations by linking claims to social determinant's data, to properly estimate the true cost of patient care
+
+## Governance
+
+The DeSci Exchange is democratically governed by the Citizen Scientists who contribute data.  
+
+Upon participation in the DeSci Exchange, the Citizen Scientist is rewarded with DeSci Tokens ($DSCI) which can be 
+used to vote on the governance of the [Aragon DeSci DAO](https://client.aragon.org/#/desci/0x24accccb8d4329aecfcb4347b3e92c8fd1349c01/).
+
+60,000,000,000 $DSCI tokens were minted at genesis. This is number is fixed and cannot be changed.  It is the same 
+number as the number of dollars used to purchase anonymized health records from EHR companies each year.
+
 
 ## Web2 Technologies Used
 
