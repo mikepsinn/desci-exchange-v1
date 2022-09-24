@@ -21,6 +21,7 @@ function MyApp({ Component, pageProps }) {
           name="viewport"
           content="width=device-width, initial-scale=1.0, viewport-fit=cover"
         ></meta>
+        <title>DeSci Exchange</title>
       </Head>
       <Component {...pageProps} />
       <Script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></Script>
