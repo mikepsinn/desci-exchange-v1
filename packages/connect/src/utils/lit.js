@@ -156,7 +156,7 @@ export async function mintLIT({ chain, quantity }) {
  * @param {Object} params
  * @param {Object} params.tokenMetadata The token metadata of the token to be transferred.  Should include tokenId, tokenAddress, and chain
  * @param {string} params.to The account address to send the token to
- * @returns {Object} Success or error
+ * @returns {Object|any} Success or error
  */
 export async function sendLIT({ tokenMetadata, to }) {
   log('sendLIT for ', tokenMetadata)

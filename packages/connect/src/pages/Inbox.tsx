@@ -21,6 +21,7 @@ import { pin, wifi, wine, warning, walk } from 'ionicons/icons';
 import './Page.css';
 import { getDataSources, UserVariable } from "../digitalTwinApi";
 
+
 //const DataSources = lazy(() => import('src/routes/safe/components/DataSourcesTable'))
 
 export type Parameter = {
@@ -171,7 +172,7 @@ let isLoading: boolean = true;
 let dataSourceList: DataSource[] = [];
 
 
-export const Page: React.FC = () => {
+export const Inbox: React.FC = () => {
 
   if (isLoading) {
     return (
@@ -248,4 +249,4 @@ export const Page: React.FC = () => {
   );
 };
 
-export default Page;
+export default Inbox;
