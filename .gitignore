@@ -39,4 +39,4 @@ testem.log
 Thumbs.db
 !desci-exchange-banner-logo.eps
 packages/core-react/**/generated
-/.env
+.env
