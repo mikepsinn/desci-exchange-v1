@@ -17,15 +17,32 @@ function removeBetween(newFileName, startStr) {
   return longest;
 }
 
+function removeUUID(file) {
+  let newFileName = file;
+  let ext = file.split('.').pop();
+  newFileName = newFileName.replace(`.${ext}`, '');
+  newFileName = removeBetween(newFileName, '-');
+  newFileName += `.${ext}`;
+  return newFileName;
+}
+
+function trimFileName(file) {
+  let newFileName = file;
+  let ext = file.split('.').pop();
+  newFileName = newFileName.replace(`.${ext}`, '');
+  newFileName = reverseString(newFileName);
+  newFileName = newFileName.substring(0, 70);
+  newFileName = reverseString(newFileName);
+  newFileName += `.${ext}`;
+  return newFileName;
+}
+
 fs.readdirSync(assets).forEach((folder) => {
   fs.readdirSync(`${assets}/${folder}`).forEach((file) => {
     if (file.length < 70) return;
     console.log(file);
-    let newFileName = file;
-    let ext = file.split('.').pop();
-    newFileName = newFileName.replace(`.${ext}`, '');
-    newFileName = removeBetween(newFileName, '-');
-    newFileName += `.${ext}`;
+    let newFileName = removeUUID(file);
+    newFileName = trimFileName(newFileName);
     if (newFileName === file) {
       return;
     }
