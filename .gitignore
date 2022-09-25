@@ -40,3 +40,17 @@ Thumbs.db
 !desci-exchange-banner-logo.eps
 packages/core-react/**/generated
 .env
+
+dist
+node_modules
+worker
+package-lock.json
+site/public
+.cluster
+*.http
+.local
+.supabase
+
+packages/desci-exchange/public/robots.txt
+packages/desci-exchange/public/sitemap.xml
+packages/api/docker/compose

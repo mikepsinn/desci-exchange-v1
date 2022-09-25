@@ -1,5 +1,6 @@
 import ReactDOMServer from 'react-dom/server';
 import { ServerStyleSheets } from '@material-ui/core/styles';
+// @ts-ignore
 import LitJsSdk from 'lit-js-sdk';
 import { log, throwError } from 'lit-js-sdk/src/lib/utils';
 import { LIT_CHAINS } from 'lit-js-sdk/src/lib/constants';
@@ -257,5 +258,3 @@ function chainHexIdToChainName(chainHexId) {
     }
   }
 }
-
-

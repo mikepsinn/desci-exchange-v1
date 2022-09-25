@@ -1,4 +1,19 @@
-# Add files here to ignore them from prettier formatting
-
-/dist
-/coverage
+node_modules
+coverage
+out
+build
+dist
+worker
+site/public
+docs
+*.sql
+*.sh
+*.svg
+*.png
+CHANGELOG.md
+.next
+.supabase
+.prettierignore
+.gitignore
+.editorconfig
+.gitattributes
