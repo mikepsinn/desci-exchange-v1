@@ -1,6 +1,6 @@
 import { createSelector } from 'reselect';
 
-const getState = state => state;
+const getState = (/** @type {any} */ state) => state;
 
 export const getHomeItems = createSelector(getState, state => state.homeItems);
 export const getLists = createSelector(getState, state => state.lists);

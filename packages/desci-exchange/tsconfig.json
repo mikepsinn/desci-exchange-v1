@@ -1,29 +1,32 @@
 {
-  "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "jsx": "react-jsx",
+    "baseUrl": ".",
+    "outDir": "./dist",
     "allowJs": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "forceConsistentCasingInFileNames": true,
+    "checkJs": true,
+    "target": "esnext",
+    "lib": ["ESNext", "DOM"],
     "strict": true,
-    "noImplicitOverride": true,
-    "noPropertyAccessFromIndexSignature": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
-    "baseUrl": ".", // This must be specified if "paths" is.
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "noEmit": true,
+    "jsx": "preserve",
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "esnext",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
     "paths": {
-      "@/components/*": ["components/*"]
-    }
+      "nft.storage": ["../client"]
+    },
+    "incremental": true
   },
-  "files": [],
-  "include": [],
+  "include": ["lib", "pages", "components"],
+  "exclude": ["node_modules/", ".next/"],
   "references": [
     {
-      "path": "./tsconfig.app.json"
-    },
-    {
-      "path": "./tsconfig.spec.json"
+      "path": "../client"
     }
   ]
 }

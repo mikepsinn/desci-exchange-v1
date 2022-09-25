@@ -1,3 +1,4 @@
+// @ts-ignore
 module.exports = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx}',
@@ -39,4 +40,4 @@ module.exports = {
     require('@tailwindcss/line-clamp'),
     require('@tailwindcss/typography'),
   ],
-}
+};
