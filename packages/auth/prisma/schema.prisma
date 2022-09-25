@@ -1,0 +1,114 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Account {
+  id                 String  @id @default(cuid())
+  userId             String
+  type               String
+  provider           String
+  providerAccountId  String
+  refresh_token      String?  @db.Text
+  access_token       String?  @db.Text
+  expires_at         Int?
+  token_type         String?
+  scope              String?
+  id_token           String?  @db.Text
+  session_state      String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String?   @unique
+  emailVerified DateTime?
+  image         String?
+  accounts      Account[]
+  sessions      Session[]
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+//
+// END next-auth
+//
+
+model FitbitAccount {
+  id    String @id
+  token String
+  user  User?
+}
+
+model Workout {
+  id          String  @id @default(cuid())
+  fitbitLogId String?
+  userId      String
+  user        User    @relation(fields: [userId], references: [id])
+  // Objective Workout Data
+  startTime             DateTime?
+  activeDurationSeconds Float?
+  distance              Float?
+  elevation             Float?
+  paceSecPerMile        Float?
+  avgHeartRate          Int?
+  // Descriptions
+  modality          WorkoutModality?
+  workoutType       WorkoutType?
+  description       String?
+  location          String?
+  listening         String?
+  strengthExercises String?
+  personalFeelings  String?
+  // Ratings
+  ratingEnergy     Int?
+  ratingDifficulty Int?
+  ratingGeneral    Int?
+}
+
+enum WorkoutModality {
+  RUN
+  BIKE
+  INLINE_SKATE
+  HIKE
+  SPINNING
+  ELLIPTICAL
+  TREADMILL
+  SPORT
+  OTHER
+}
+
+enum WorkoutType {
+  LONG
+  SPEED
+  TEMPO
+  VERTICAL
+  RECOVERY
+  BASE
+  CROSSTRAIN
+}
