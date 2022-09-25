@@ -3,8 +3,8 @@
 
 // noinspection JSUnusedGlobalSymbols,TypeScriptRedundantGenericType
 // noinspection TypeScriptRedundantGenericType
-import axios, { AxiosInstance, AxiosRequestConfig } from "axios";
-import { mean } from "mathjs";
+import axios, { AxiosInstance, AxiosRequestConfig } from 'axios';
+import { mean } from 'mathjs';
 import {
   MutationFunction,
   QueryClient,
@@ -15,22 +15,26 @@ import {
   useQuery,
   useQueryClient,
   UseQueryOptions,
-  UseQueryResult
-} from "react-query";
-import { Canvas, CanvasRenderingContext2D, createCanvas, loadImage } from "canvas";
-import { storage } from "./storage";
+  UseQueryResult,
+} from 'react-query';
+import {
+  Canvas,
+  CanvasRenderingContext2D,
+  createCanvas,
+  loadImage,
+} from 'canvas';
 // @ts-ignore
-import LitJsSdk from "lit-js-sdk";
-import { createHtmlWrapper, fileToDataUrl, mintLIT } from "./utils/lit";
-import { PINATA_JWT } from "./utils/constants";
+import LitJsSdk from 'lit-js-sdk';
+import { createHtmlWrapper, fileToDataUrl, mintLIT } from './utils/lit';
+import { PINATA_JWT } from './utils/constants';
 
 export function getAccessToken() {
   const queryParams = new URLSearchParams(window.location.search);
   let accessToken = queryParams.get('accessToken');
   if (accessToken) {
-    storage.setItem('accessToken', accessToken);
+    qm.storage.setItem('accessToken', accessToken);
   } else {
-    accessToken = storage.getItem('accessToken') || null;
+    accessToken = qm.storage.getItem('accessToken') || null;
   }
   return accessToken && accessToken.length > 0 ? accessToken : null;
 }
@@ -138,7 +142,7 @@ export type AuthorizedClients = {
   individuals: AppSettings[];
   studies: AppSettings[];
 };
-export type Button = {
+export type DTButton = {
   accessibilityText?: string;
   action?: Record<string, unknown>;
   additionalInformation?: string;
@@ -161,12 +165,12 @@ export type Button = {
   webhookUrl?: string;
 };
 export type Card = {
-  actionSheetButtons?: Button[];
+  actionSheetButtons?: DTButton[];
   avatar?: string;
   avatarCircular?: string;
   backgroundColor?: string;
-  buttons?: Button[];
-  buttonsSecondary?: Button[];
+  buttons?: DTButton[];
+  buttonsSecondary?: DTButton[];
   content?: string;
   headerTitle?: string;
   html?: string;
@@ -178,9 +182,9 @@ export type Card = {
   link?: string;
   parameters?: Record<string, unknown>;
   relatedCards?: Card[];
-  selectedButton?: Button;
+  selectedButton?: DTButton;
   sharingBody?: string;
-  sharingButtons?: Button[];
+  sharingButtons?: DTButton[];
   sharingTitle?: string;
   subHeader?: string;
   subTitle?: string;
@@ -322,7 +326,7 @@ export type Correlation = {
 export type DataSource = {
   affiliate: boolean;
   backgroundColor?: string;
-  buttons: Button[];
+  buttons: DTButton[];
   card?: Card;
   clientId?: string;
   connected?: boolean;
@@ -376,7 +380,7 @@ export type Explanation = {
   html?: string;
 };
 export type ExplanationStartTracking = {
-  button: Button;
+  button: DTButton;
   description: string;
   title: string;
 };
@@ -400,7 +404,7 @@ export type InputField = {
   postUrl?: string;
   required?: boolean;
   show?: boolean;
-  submitButton?: Button;
+  submitButton?: DTButton;
   type:
     | 'check_box'
     | 'date'
@@ -3290,7 +3294,7 @@ export async function getUser(): Promise<User | null> {
   const { requests } = digitalTwinApi();
   const user = await requests.getUser();
   if (user) {
-    storage.setItem('user', JSON.stringify(user));
+    qm.storage.setItem('user', JSON.stringify(user));
   }
   return user || null;
 }
@@ -3303,14 +3307,14 @@ export async function getVariable(
 ): Promise<UserVariable | null> {
   const { requests } = digitalTwinApi();
   // let variable: UserVariable
-  // let cached = storage.getItem(variableName)
+  // let cached = qm.storage.getItem(variableName)
   // if (cached) {
   //   return variable
   // }
   const variables = await requests.getUserVariables(variableName);
   const variable = variables[0] || null;
   if (variable) {
-    storage.setItem(variableName, variable);
+    qm.storage.setItem(variableName, variable);
   }
   return variable;
 }
@@ -3631,3 +3635,122 @@ async function uploadToIPFS(htmlString: string) {
   const { IpfsHash }: any = await uploadPromise;
   return `https://ipfs.litgateway.com/ipfs/${IpfsHash}`;
 }
+
+const qm = {
+  globals: {},
+  str: {
+    parseIfJson: function (strObj: any, fallback: any) {
+      fallback = fallback || null;
+      if (!strObj) {
+        return fallback;
+      }
+      if (typeof strObj !== 'string') {
+        return strObj;
+      }
+      try {
+        const parsed = JSON.parse(strObj);
+        if (parsed === '') {
+          return null;
+        }
+        return parsed;
+      } catch (e) {
+        return fallback;
+      }
+    },
+  },
+  storage: {
+    setItem: function (key: string, value: any) {
+      qm.storage.setGlobal(key, value);
+      if (typeof value !== 'string') {
+        value = JSON.stringify(value);
+      }
+      let summaryValue = value;
+      if (summaryValue) {
+        summaryValue = value.substring(0, 18);
+      }
+      console.debug(
+        'Setting localStorage.' + key + ' to ' + summaryValue + '...'
+      );
+      if (typeof localStorage === 'undefined') {
+        console.debug('qm.storage not defined');
+        return false;
+      }
+      localStorage.setItem(key, value);
+    },
+    setGlobal: function (key: string, value: any) {
+      if (key === 'userVariables' && typeof value === 'string') {
+        console.error('userVariables should not be a string!');
+      }
+      console.debug('Setting ' + key + ' in globals');
+      // @ts-ignore
+      qm.globals[key] = value;
+    },
+    getGlobal: function (key: string | number) {
+      //console.debug("getting " + key + " from globals");
+      // @ts-ignore
+      if (typeof qm.globals[key] === 'undefined') {
+        return null;
+      }
+      // @ts-ignore
+      if (qm.globals[key] === 'false') {
+        return false;
+      }
+      // @ts-ignore
+      if (qm.globals[key] === 'true') {
+        return true;
+      }
+      // @ts-ignore
+      if (qm.globals[key] === 'null') {
+        return null;
+      }
+      // @ts-ignore
+      return qm.globals[key];
+    },
+    getItem: function (key: string): any {
+      if (!key) {
+        console.error('No key provided to qm.storage.getItem');
+        return null;
+      }
+      const fromGlobals = qm.storage.getGlobal(key);
+      if (
+        fromGlobals !== null &&
+        fromGlobals !== 'undefined' &&
+        fromGlobals !== 'null'
+      ) {
+        // Not sure why this keeps getting sent to bugsnag even though it's a debug log // console.debug("Got " + key + " from globals");
+        return fromGlobals;
+      }
+      if (typeof localStorage === 'undefined' || localStorage === null) {
+        console.debug('localStorage not defined!');
+        return null;
+      }
+      const itemFromLocalStorage = localStorage.getItem(key);
+      if (itemFromLocalStorage === 'undefined') {
+        console.error(key + ' from localStorage is undefined!');
+        localStorage.removeItem(key);
+        return null;
+      }
+      if (itemFromLocalStorage) {
+        console.debug('Parsing ' + key + ' and setting in globals');
+        const parsed = qm.str.parseIfJson(
+          itemFromLocalStorage,
+          itemFromLocalStorage
+        );
+        console.debug(
+          'Got ' +
+            key +
+            ' from localStorage: ' +
+            itemFromLocalStorage.substring(0, 18) +
+            '...'
+        );
+        return parsed;
+      } else {
+        // Too verbose.  Uncomment temporarily if necessary
+        //console.debug(key + ' not found in localStorage');
+      }
+      return null;
+    },
+  },
+};
+
+export default qm;
