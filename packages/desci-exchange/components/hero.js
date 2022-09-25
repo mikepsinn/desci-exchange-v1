@@ -47,7 +47,7 @@ export default function Hero() {
               height="auto"
               width="100%"
               className="px-4"
-              src="images/desci-exchange/desci-exchange-text-logo-wide-text-hands-no-background.png"
+              src="/images/desci-exchange/desci-exchange-text-logo-wide-text-hands-no-background.png"
               alt="Hero Image"
             />
             <div className="flex justify-center pt-10">
