@@ -1,0 +1,55 @@
+:root {
+  --dseblack: #000;
+  --dsewhite: #fff;
+
+  --dsegray: #d8dad9;
+  --dsegray-50: #f7f7f7;
+  --dsegray-100: #d8dad9;
+  --dsegray-200: #bbbbbb;
+  --dsegray-300: #7d8492;
+  --dsegray-400: #888888;
+  --dsegray-500: #666666;
+  --dsegray-600: #3b4151;
+
+  --dseltblue: #eef7f6;
+  --dseblue: #47aed7;
+  --dseforest: #0a854c;
+  --dsegreen: #d3e7dc;
+  --dselime: #66fecb;
+  --dsenavy: #336bad;
+  --dseorange: #ee4116;
+  --dseorangred: #d53810;
+  --dsepeach: #ffe1c5;
+  --dsepink: #f7cdcf;
+  --dsepurple: #211e74;
+  --dsered-100: #feebeb;
+  --dsered: #e11e2e;
+  --dseyellow: #e2ba36;
+
+  --dsetitle: White Rabbit, sans-serif;
+  --sansserif: -apple-system, BlinkMacSystemFont, 'avenir next', avenir,
+  'helvetica neue', helvetica, ubuntu, roboto, noto, 'segoe ui', arial,
+  sans-serif;
+  --dsemonospace: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
+  --bradius: 0px;
+  --bwidth: 1px;
+
+  --btn-ghost-x: -5px;
+  --btn-ghost-y: -5px;
+  --btn-ghost-x-hover: -1px;
+  --btn-ghost-y-hover: -1px;
+
+  --card-ghost-x: -9px;
+  --card-ghost-y: -9px;
+  --card-ghost-x-hover: -5px;
+  --card-ghost-y-hover: -5px;
+
+  --h2-size: 2em;
+  --h3-size: 2em;
+  --h4-size: 1.75em;
+  --h5-size: 1.5em;
+  --h6-size: 1.25em;
+
+  --tab-active-color: var(--dsepurple);
+  --tab-hover-bgcolor: var(--dsegray-50);
+}

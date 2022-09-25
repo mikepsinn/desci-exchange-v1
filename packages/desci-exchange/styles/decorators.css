@@ -1,0 +1,86 @@
+/* decorators */
+.hologram {
+  text-decoration: none;
+  background-color: #fff;
+  transform: translate3d(
+    calc(var(--btn-ghost-x) * -1),
+    calc(var(--btn-ghost-y) * -1 / 2),
+    0
+  );
+  backface-visibility: hidden;
+  border: 0;
+  box-shadow: 0 0 0 1px var(--dseblack),
+    var(--btn-ghost-x) var(--btn-ghost-y) 0px 0px var(--dsegray),
+    var(--btn-ghost-x) var(--btn-ghost-y) 0px 1px var(--dseblack);
+  position: relative;
+}
+
+.hologram.interactive {
+  transition: all 150ms ease;
+  cursor: pointer;
+}
+
+.hologram.interactive:hover {
+  box-shadow: 0 0 0 1px var(--dseblack),
+    var(--btn-ghost-x-hover) var(--btn-ghost-y-hover) 0px 0px var(--dseltblue),
+    var(--btn-ghost-x-hover) var(--btn-ghost-y-hover) 0px 0px var(--dseblack);
+  transform: translate3d(0, calc(var(--btn-ghost-y) * 1 / 2), 0);
+}
+
+.hologram.ltblue {
+  border: var(--bwidth) solid var(--dseblack);
+  box-shadow: var(--btn-ghost-x) var(--btn-ghost-y) 0px 0px var(--dseltblue),
+    var(--btn-ghost-x) var(--btn-ghost-y) 0px 1px var(--dseblack);
+}
+
+.hologram.caution {
+  box-shadow: var(--btn-ghost-x) var(--btn-ghost-y) 0px 0px var(--dsegray-50),
+    var(--btn-ghost-x) var(--btn-ghost-y) 0px 1px var(--dseblack);
+}
+
+.hologram.right {
+  box-shadow: calc(var(--btn-ghost-x) * -1) var(--btn-ghost-y) 0px 0px
+      var(--dsegray),
+    calc(var(--btn-ghost-x) * -1) var(--btn-ghost-y) 0px 1px var(--dseblack);
+}
+
+.hologram.right.interactive:hover {
+  box-shadow: calc(var(--btn-ghost-x-hover) * -1) var(--btn-ghost-y-hover) 0px
+      0px var(--dsepurple),
+    calc(var(--btn-ghost-x-hover) * -1) var(--btn-ghost-y-hover) 0px 1px
+      var(--dseblack);
+}
+
+.hologram.card {
+  border: var(--bwidth) solid var(--dseblack);
+  box-shadow: var(--card-ghost-x) var(--card-ghost-y) 0px 0px var(--dseltblue),
+    var(--card-ghost-x) var(--card-ghost-y) 0px 1px var(--dseblack);
+}
+
+.hologram.card.right {
+  box-shadow: calc(var(--card-ghost-x) * -1) var(--card-ghost-y) 0px 0px
+      var(--dseltblue),
+    calc(var(--card-ghost-x) * -1) var(--card-ghost-y) 0px 1px var(--dseblack);
+}
+
+.hologram.card.interactive {
+  transition: all 300ms ease;
+  cursor: pointer;
+}
+
+.hologram.card.interactive:hover {
+  box-shadow: var(--card-ghost-x-hover) var(--card-ghost-y-hover) 0px 0px
+      var(--dsepurple),
+    var(--card-ghost-x-hover) var(--card-ghost-y-hover) 0px 1px var(--dseblack);
+}
+
+.hologram.card.right.interactive:hover {
+  box-shadow: calc(var(--card-ghost-x-hover) * -1) var(--card-ghost-y-hover) 0px
+      0px var(--dsepurple),
+    calc(var(--card-ghost-x-hover) * -1) var(--card-ghost-y-hover) 0px 1px
+      var(--dseblack),
+    calc(var(--card-ghost-x-hover) * -2) calc(var(--card-ghost-y-hover) * 2) 0px
+      0px var(--dsered),
+    calc(var(--card-ghost-x-hover) * -2) calc(var(--card-ghost-y-hover) * 2) 0px
+      1px var(--dseblack);
+}

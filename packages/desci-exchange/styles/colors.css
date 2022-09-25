@@ -1,0 +1,60 @@
+.nsblue {
+  color: var(--dseblue);
+}
+.nsltblue {
+  color: var(--dseltblue);
+}
+.bg--dseltblue {
+  background-color: var(--dseltblue);
+}
+.bg--dseblue {
+  background-color: var(--dseblue);
+}
+.bg--dseforest {
+  background-color: var(--dseforest);
+}
+.nsgray {
+  color: var(--dsegray);
+}
+.darker-gray {
+  color: var(--dsegray-500);
+}
+.bg--dsegray {
+  background-color: var(--dsegray);
+}
+.bg--dsegreen {
+  background-color: var(--dsegreen);
+}
+.bg--dseorange {
+  background-color: var(--dseorange);
+}
+.bg--dsepurple {
+  background-color: var(--dsepurple);
+}
+.bg--dselime {
+  background-color: var(--dselime);
+}
+.nsnavy {
+  color: var(--dsenavy);
+}
+.bg--dsenavy {
+  background-color: var(--dsenavy);
+}
+.nspeach {
+  color: var(--dsepeach);
+}
+.bg--dsepeach {
+  background-color: var(--dsepeach);
+}
+.nspink {
+  color: var(--dsepink);
+}
+.bg--dsepink {
+  background-color: var(--dsepink);
+}
+.bg--dsered {
+  background-color: var(--dsered);
+}
+.bg--dseyellow {
+  background-color: var(--dseyellow);
+}
