@@ -1,12 +1,15 @@
 /* eslint-disable no-useless-escape */
 if (typeof qm === 'undefined') {
   if (typeof window === 'undefined') {
+    // @ts-ignore
     global.qm = {};
   } else {
+    // @ts-ignore
     window.qm = {};
   }
 }
 if (typeof qm.staticData === 'undefined') {
+  // @ts-ignore
   qm.staticData = {};
 }
 qm.staticData.commonVariables = [
