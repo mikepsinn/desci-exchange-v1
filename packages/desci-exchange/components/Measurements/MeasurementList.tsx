@@ -1,5 +1,5 @@
 import { ReactElement } from 'react';
-import { Box, Grid } from '@material-ui/core';
+import { Grid } from '@material-ui/core';
 import { digitalTwinApi, Measurement } from '../../digitalTwinApi';
 import {
   IonCard,
@@ -40,13 +40,13 @@ export const MeasurementList = (): ReactElement | null => {
                       />
                     </Grid>
                     <Grid item xs={12} md={9}>
-                      <Box mb={1.01}>
+                      <div>
                         <IonText>
                           {measurement.displayValueAndUnitString +
                             ' ' +
                             measurement.variableName}
                         </IonText>
-                      </Box>
+                      </div>
                       <IonText color="primary">Edit Measurement</IonText>
                     </Grid>
                   </Grid>
