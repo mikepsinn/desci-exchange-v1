@@ -3,8 +3,7 @@
 Data Gems bestow their holder with magical powers enabling them to transcend the physical world and see an aspect of 
 its inter-dimensionally linked digital twin. 
 
-A more boring way to put it, is to say that Data Gems are ERC721 tokens that give the holder the ability to decrypt 
-a Lit Protocol encrypted data stream.
+A more boring way to put it, is to say that Data Gems are NFT tokens that give the holder the ability to decrypt a data stream.
 
 They can be mined by the Analog Twin in the Digital Twin Safe and can be given or sold to other Analog Twins.
 
@@ -17,9 +16,9 @@ If you set `base_uri` now, the collection will be revealed immediately upon depl
 Before deployment, upload the placeholder image to IPFS using `Upload a file to IPFS`.
 
 1. Before deployment, upload a single placeholder metadata JSON using 
-1. Upload metadata to IPFS, using the IPFS image URL you just uploaded as file_url.
-1. When deploying, keep the `base_uri` empty and set `prereveal_token_uri` to the URL of the metadata file you just uploaded to IPFS.
-1. When you are ready to reveal your collection, use `Update a deployed collection contract` to set the `base_uri` to the location of the IPFS metadata directory created in Step 2.
+2. Upload metadata to IPFS, using the IPFS image URL you just uploaded as file_url.
+3. When deploying, keep the `base_uri` empty and set `prereveal_token_uri` to the URL of the metadata file you just uploaded to IPFS.
+4. When you are ready to reveal your collection, use `Update a deployed collection contract` to set the `base_uri` to the location of the IPFS metadata directory created in Step 2.
 
 # Exchange Fees
 
