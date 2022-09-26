@@ -1,18 +1,14 @@
-import Router, { useRouter } from 'next/router';
-import { useCallback, useMemo, useRef, useState } from 'react';
+import Router, { useRouter } from "next/router";
+import { useCallback, useMemo, useRef, useState } from "react";
 
-import Button from './button.js';
-import Cross from '../icons/cross';
-import Hamburger from '../icons/hamburger';
-import Link from './link';
-import clsx from 'clsx';
-import { getMagic } from '../lib/magic.js';
-import { useQueryClient } from 'react-query';
-import Logo from '../components/logo';
-import { useUser } from 'lib/user.js';
-import constants from 'lib/constants';
-
-const BLOG_URL = constants.BLOG_URL;
+import Button from "./button.js";
+import Cross from "../icons/cross";
+import Hamburger from "../icons/hamburger";
+import Link from "./link";
+import clsx from "clsx";
+import { useQueryClient } from "react-query";
+import Logo from "../components/logo";
+import { useUser } from "lib/user.js";
 
 /**
  * Navbar Component
@@ -33,7 +29,6 @@ export default function Navbar({ bgColor = 'bg--dsepurple', logo, user }) {
   const version = /** @type {string} */ (query.version);
 
   const logout = useCallback(async () => {
-    await getMagic().user.logout();
     delete sessionStorage.hasSeenUserBlockedModal;
     handleClearUser();
     Router.push({ pathname: '/', query: version ? { version } : null });
@@ -90,13 +85,6 @@ export default function Navbar({ bgColor = 'bg--dsepurple', logo, user }) {
           activeClass: '!text-blue',
         },
         name: 'FAQ',
-      },
-      {
-        link: {
-          pathname: BLOG_URL,
-          activeClass: '!text-forest',
-        },
-        name: 'Blog',
       },
       ...(user
         ? [
