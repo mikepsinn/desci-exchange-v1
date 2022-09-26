@@ -9,7 +9,7 @@ import LockIcon from '@material-ui/icons/Lock';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    backgroundColor: theme.backgroundColor,
+    backgroundColor: 'white',
     textAlign: 'center',
   },
   leftAlignedText: {
@@ -22,6 +22,9 @@ const useStyles = makeStyles((theme) => ({
     flexWrap: 'nowrap',
   },
 }));
+/**
+ * @param {{ title: any; description: any; quantity: any; socialMediaUrl: any; locked: any; handleToggleLock: any; previewMode: any; }} props
+ */
 export default function Info(props) {
   const {
     title,

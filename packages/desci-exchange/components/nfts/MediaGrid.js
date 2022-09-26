@@ -33,12 +33,17 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+/**
+ * @param {{ files: any; }} props
+ */
 export default function MediaGrid(props) {
   const { files } = props;
   const classes = useStyles();
   const maxHeight = 400;
 
-  const playerTagForFile = (file) => {
+  const playerTagForFile = (
+    /** @type {{ type: string; dataUrl: string; }} */ file
+  ) => {
     if (!file.type) {
       return null;
     }
@@ -84,8 +89,6 @@ export default function MediaGrid(props) {
         <embed
           src={fileUrl}
           type="application/pdf"
-          frameBorder="0"
-          scrolling="auto"
           className={classes.pdfHolder}
           height="100%"
           width="100%"
