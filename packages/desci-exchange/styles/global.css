@@ -7,38 +7,35 @@
 @import './animations.css';
 @import './stats.css';
 @import './button.css';
-@import './markdown.css';
-@import './nft-storage.swagger-ui.css';
 @import './nav.css';
-@import './table.css';
 @import './tabs.css';
 @import './modal.css';
 @import './footer.css';
 @import './tooltip.css';
-@import './netlify-partials.css';
 
 html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 5rem;
-  box-sizing: border-box;
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+    box-sizing: border-box;
 }
+
 *,
 *:before,
 *:after {
-  box-sizing: inherit;
+    box-sizing: inherit;
 }
 
 @media screen and (min-width: 52em) {
-  html {
-    scroll-padding-top: 2rem;
-  }
+    html {
+        scroll-padding-top: 2rem;
+    }
 }
 
 .grid {
-  display: grid;
+    display: grid;
 }
 
 img {
-  user-select: none;
-  -moz-user-select: none;
+    user-select: none;
+    -moz-user-select: none;
 }
