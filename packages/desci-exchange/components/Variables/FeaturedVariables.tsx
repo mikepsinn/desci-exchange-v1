@@ -1,14 +1,14 @@
 import { ReactElement } from 'react';
-import {
-  digitalTwinApi,
-  getAccessToken,
-  UserVariable,
-} from '../digitalTwinApi';
-import { Box, CardContent, DialogTitle } from '@material-ui/core';
+import { CardContent, DialogTitle } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
 import { IonCard, IonImg, IonText } from '@ionic/react';
 import { NavLink } from 'react-router-dom';
 import Container from '@material-ui/core/Container';
+import {
+  digitalTwinApi,
+  getAccessToken,
+  UserVariable,
+} from '../../digitalTwinApi';
 
 export const FeaturedVariables = (): ReactElement | null => {
   const { queries } = digitalTwinApi();
@@ -47,9 +47,9 @@ export const FeaturedVariables = (): ReactElement | null => {
                       <IonImg src={variable.imageUrl} alt={variable.name} />
                     </Grid>
                     <Grid item xs={12} md={9}>
-                      <Box mb={1.01}>
+                      <div>
                         <IonText>{variable.displayName}</IonText>
-                      </Box>
+                      </div>
                       <IonText color="primary">View Mega Study</IonText>
                     </Grid>
                   </Grid>

@@ -4,7 +4,6 @@
 import React, { useState } from 'react';
 import { generatePath, Link } from 'react-router-dom';
 // @ts-ignore
-import LitJsSdk from 'lit-js-sdk';
 import {
   IonCard,
   IonCardContent,
@@ -29,9 +28,6 @@ const chainNameLowercase = CHAIN_POLYGON.toLowerCase();
 type UserVariableCardProps = {
   userVariable: UserVariable;
 };
-
-const litNodeClient = new LitJsSdk.LitNodeClient();
-litNodeClient.connect();
 
 function getWalletAddress() {
   return '';

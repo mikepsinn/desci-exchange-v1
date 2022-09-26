@@ -4,8 +4,7 @@ import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useIonToast } from '@ionic/react';
 import { FETCH_STATUS } from '../../../utils/requests';
-import { UserVariable } from '../../../digitalTwinApi';
-import { fetchUserVariablesList } from '../../../api/fetchUserVariables';
+import { getUserVariables, UserVariable } from '../../../digitalTwinApi';
 
 type ReturnType = {
   remoteUserVariables: UserVariable[];
@@ -17,7 +16,7 @@ type ReturnType = {
 let fetchPromise: Promise<UserVariable[]> | null = null;
 const memoizedFetchUserVariables = (): Promise<UserVariable[]> => {
   if (!fetchPromise) {
-    fetchPromise = fetchUserVariablesList();
+    fetchPromise = getUserVariables();
   }
   fetchPromise.finally(() => (fetchPromise = null));
   return fetchPromise;
