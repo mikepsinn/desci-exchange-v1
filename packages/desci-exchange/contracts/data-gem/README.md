@@ -1,5 +1,7 @@
 # Data Gems
 
+![data gem](../../public/images/data-gems/data-gems.png)
+
 Data Gems bestow their holder with magical powers enabling them to transcend the physical world and see an aspect of 
 its inter-dimensionally linked digital twin. 
 
