@@ -1,40 +1,72 @@
-import { useEffect, useState } from 'react';
-import { getDataSources } from '../digitalTwinApi';
-import { DataSourceRow } from '../components/DataSourcesTable/DataSourceRow';
+// @ts-nocheck
+// noinspection CommaExpressionJS
+import { digitalTwinApi, updateDataSourceButtonLink } from "../digitalTwinApi";
+import Grid from "@material-ui/core/Grid";
+import { TableContainer } from "@material-ui/core";
+import Box from "../components/box";
+
+export const DataSources = () => {
+  const { queries } = digitalTwinApi();
+
+  const { data, isLoading, isLoadingError } = queries.useGetConnectors();
+
+  if (!data || isLoadingError) return null;
+
+  const connectors = data.connectors;
+
+  if (!connectors) return null;
+
+  if (!connectors.length && !isLoading) return null;
+
+  return (
+      <Grid item xs={12} md>
+        <TableContainer id="featured-data-sources">
+          <h1>Import Your Data</h1>
+          <div>
+            <Grid container>
+              {connectors.map((dataSource) => (
+                  <div key={dataSource.id}>
+                    <Box>
+                      <Grid container alignItems="center" spacing={3}>
+                        <Grid item xs={12} md={3}>
+                          <img src={dataSource.image} alt={dataSource.name} />
+                        </Grid>
+                        <Grid item xs={12} md={9}>
+                          <div>
+                            <p>{dataSource.longDescription}</p>
+                          </div>
+                          {dataSource.buttons.map(
+                              (button, index) => (
+                                  // eslint-disable-next-line no-sequences
+                                  updateDataSourceButtonLink(button),
+                                      (
+                                          <a key={index} href={button.link}>
+                                            <img src={button.image} alt={'hi'} />
+                                            {button.text}
+                                          </a>
+                                      )
+                              )
+                          )}
+                        </Grid>
+                      </Grid>
+                    </Box>
+                  </div>
+              ))}
+            </Grid>
+          </div>
+        </TableContainer>
+      </Grid>
+  );
+};
 
 export default function Connect() {
-  const [dataSources, setDataSources] = useState([]);
-
-  useEffect(() => {
-    getDataSources()
-      .then((response) => setDataSources(response))
-      .catch((err) => console.error(err));
-  }, []);
-
-  // debugger
-  if (typeof dataSources === 'undefined') {
-    setDataSources([]);
-  }
-
-  debugger;
-  const DataSourcesList = () => {
-    const figureClass = `whitrabt text-[clamp(22px,_4.2rem,_6vw)] my-5`;
-    const statImageClass = `w-full border-b border-black object-cover aspect-[5/2]`;
-    const statInnerClass = `bg-white border border-black w-full h-full flex flex-col justify-between`;
-    const dataSourcesList = dataSources.map(
-      (/** @type DataSource */ dataSource) => (
-        <DataSourceRow dataSource={dataSource} key={dataSource.id} />
-      )
-    );
-    return dataSourcesList;
-  };
   return (
-    <div className="stat-cards-wrapper">
-      <div className="max-w-7xl mx-auto py-4 px-6 sm:px-16">
-        <div className="stat-cards -mt-24 mb-16 pl-8 grid gap-x-16 gap-y-[8vw] md:grid-cols-2">
-          {DataSourcesList()}
+      <div className="stat-cards-wrapper">
+        <div className="max-w-7xl mx-auto py-4 px-6 sm:px-16">
+          <div className="stat-cards -mt-24 mb-16 pl-8 grid gap-x-16 gap-y-[8vw] md:grid-cols-2">
+            {DataSources()}
+          </div>
         </div>
       </div>
-    </div>
   );
 }
