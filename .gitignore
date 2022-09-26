@@ -54,3 +54,4 @@ site/public
 packages/desci-exchange/public/robots.txt
 packages/desci-exchange/public/sitemap.xml
 packages/api/docker/compose
+/packages/desci-exchange/.env.development
