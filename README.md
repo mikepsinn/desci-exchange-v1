@@ -4,6 +4,49 @@
 
 ![how-it-works](packages/desci-exchange/public/images/desci-exchange/desci-exchange-text-logo-wide-text-hands-background.png)
 
+## How it works
+![how-it-works](packages/desci-exchange/public/images/desci-exchange/desci-exchange-how-it-works.png)
+
+## Architecture Overview
+
+![architecture-overview](packages/desci-exchange/public/images/desci-exchange/desci-exchange-diagram.svg)
+
+# Digital Twin Skeleton Key NFT
+
+![digital twin](packages/desci-exchange/public/images/digital-twins/digital-twin-nft.png)
+
+Possession is checked when accessing your Digital Twin Safe.
+If you don't have the key, you're prompted to mint one.
+
+The Digital Twin Skeleton Key NFT is a soul-bound NFT that can only be minted if you do not already have one.
+
+This key gives you the ability to mint [Data Gem Data Access NFTs](../data-gem/README.md) using your imported data.
+
+### Life Force Score
+
+The attached avatar image and Life Force Score metadata are updated daily based on their imported data performing
+healthy activities, such as having a good sleep schedule, hydrating, and exercising.
+
+This metadata is available to various metaverse game ecosystems and can influence their scores and abilities in these
+games.
+
+[CONTRACTS AND MORE INFO ABOUT DIGITAL TWIN NFTS](packages/desci-exchange/contracts/digital-twin/README.md)
+
+# Data Gems
+
+![data gem](packages/desci-exchange/public/images/data-gems/data-gems.png)
+
+Data Gems bestow their holder with magical powers enabling them to transcend the physical world and see an aspect of its inter-dimensionally linked digital twin.
+
+A more boring way to put it, is to say that Data Gems are NFT tokens that give the holder the ability to decrypt a data stream.
+
+They can be mined by the data owner and can be given or sold to other Analog Twins or businesses.
+
+[CONTRACTS AND MORE INFO ABOUT DATA GEMS](packages/desci-exchange/contracts/data-gem/README.md)
+
+
+
+
 ## Benefits
 
 ### For Individuals
@@ -63,7 +106,6 @@ A JavaScript library for building user interfaces.
 [Stencil](https://stenciljs.com/) is for building reusable, scalable Design Systems with standards based Web Components.
 
 - https://github.com/spruceid/siwe-notepad
--
 
 🔎 **Smart, Fast and Extensible Build System**
 

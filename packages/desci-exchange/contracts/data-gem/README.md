@@ -2,14 +2,11 @@
 
 ![data gem](../../public/images/data-gems/data-gems.png)
 
-Data Gems bestow their holder with magical powers enabling them to transcend the physical world and see an aspect of 
-its inter-dimensionally linked digital twin. 
+Data Gems bestow their holder with magical powers enabling them to transcend the physical world and see an aspect of its inter-dimensionally linked digital twin. 
 
 A more boring way to put it, is to say that Data Gems are NFT tokens that give the holder the ability to decrypt a data stream.
 
-They can be mined by the Analog Twin in the Digital Twin Safe and can be given or sold to other Analog Twins.
-
-Data Gems are the basic building blocks of the Digital Twin Safe.
+They can be mined by the data owner and can be given or sold to other Analog Twins or businesses.
 
 ## Initial DataGem MetaData
 
