@@ -20,7 +20,7 @@ export default function Layout({
   description = slogan,
   navBgColor = 'bg--dsepurple',
   altLogo = false,
-  image = 'images/desci-exchange-banner-logo-[Converted].png',
+  image = 'images/desci-exchange-banner-logo-[Converted].png'
 }) {
   // @ts-ignore
   const { user } = useUser();
@@ -29,7 +29,7 @@ export default function Layout({
     src: altLogo
       ? '/images/desci-exchange/desci-exchange-text-logo-wide.svg'
       : '/images/desci-exchange/desci-exchange-text-logo-wide.svg',
-    isDark: altLogo,
+    isDark: altLogo
   };
 
   const jsonLD = JSON.stringify({
@@ -40,7 +40,7 @@ export default function Layout({
   });
 
   return (
-    <div className="nft-storage font-sans flex flex-col min-h-screen">
+    <div className="font-sans flex flex-col min-h-screen">
       <Head>
         <title>{title}</title>
         <meta name="description" content={description} />
