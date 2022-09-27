@@ -59,7 +59,7 @@ export default function Hero() {
                 <img
                   className="h-auto md:max-w-full max-w-sm w-full md:w-auto md:h-64"
                   src="images/digital-twins/broken-robot.png"
-                  alt={'hi'}
+                  alt={'broken-robot'}
                 ></img>
               </div>
             </div>

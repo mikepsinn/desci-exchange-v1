@@ -1,14 +1,14 @@
-import Router, { useRouter } from "next/router";
-import { useCallback, useMemo, useRef, useState } from "react";
+import Router, { useRouter } from 'next/router';
+import { useCallback, useMemo, useRef, useState } from 'react';
 
-import Button from "./button.js";
-import Cross from "../icons/cross";
-import Hamburger from "../icons/hamburger";
-import Link from "./link";
-import clsx from "clsx";
-import { useQueryClient } from "react-query";
-import Logo from "../components/logo";
-import { useUser } from "lib/user.js";
+import Button from './button.js';
+import Cross from '../icons/cross';
+import Hamburger from '../icons/hamburger';
+import Link from './link';
+import clsx from 'clsx';
+import { useQueryClient } from 'react-query';
+import Logo from '../components/logo';
+import { useUser } from 'lib/user.js';
 
 /**
  * Navbar Component
@@ -42,68 +42,68 @@ export default function Navbar({ bgColor = 'bg--dsepurple', logo, user }) {
             {
               link: {
                 pathname: '/files',
-                query: version ? { version } : null,
+                query: version ? { version } : null
               },
-              name: 'Files',
+              name: 'Files'
             },
             {
               link: {
                 pathname: '/manage',
-                query: version ? { version } : null,
+                query: version ? { version } : null
               },
-              name: 'API Keys',
-            },
+              name: 'API Keys'
+            }
           ]
         : []),
       {
         link: {
-          pathname: '/',
+          pathname: 'https://curedao.org',
           hash: '#about',
-          query: version ? { version } : null,
+          query: version ? { version } : null
         },
-        name: 'About',
+        name: 'About'
       },
       {
         link: {
-          pathname: '/docs',
-          query: version ? { version } : null,
+          pathname: 'https://github.com/DeSciExchange/desci-exchange',
+          query: version ? { version } : null
         },
-        name: 'Docs',
+        name: 'Github'
       },
       {
         link: {
           pathname: '/stats',
           query: version ? { version } : null,
-          activeClass: '!text-forest',
+          activeClass: '!text-forest'
         },
-        name: 'Stats',
+        name: 'Stats'
       },
       {
         link: {
           pathname: '/faq',
           query: version ? { version } : null,
-          activeClass: '!text-blue',
+          activeClass: '!text-blue'
         },
-        name: 'FAQ',
+        name: 'FAQ'
       },
       ...(user
         ? [
             {
               onClick: logout,
               name: 'Logout',
-              mobileOnly: true,
-            },
+              mobileOnly: true
+            }
           ]
         : [
             {
               link: {
                 pathname: '/login',
-                query: version ? { version } : null,
+                query: version ? { version } : null
               },
               name: 'Login',
-              mobileOnly: true,
-            },
-          ]),
+              mobileOnly: true
+            }
+          ])
     ],
     [user, version, logout]
   );
@@ -156,7 +156,7 @@ export default function Navbar({ bgColor = 'bg--dsepurple', logo, user }) {
                 'text-xl text-white no-underline underline-hover align-middle',
                 {
                   mr4: index === ITEMS.length - 1,
-                  [item.link?.activeClass || '!text-white']: isActive,
+                  [item.link?.activeClass || '!text-white']: isActive
                 }
               );
               delete item?.link?.activeClass;
@@ -192,7 +192,7 @@ export default function Navbar({ bgColor = 'bg--dsepurple', logo, user }) {
                 className="ml-8"
                 href={{
                   pathname: '/login',
-                  query: version ? { version } : null,
+                  query: version ? { version } : null
                 }}
                 id="login"
               >
