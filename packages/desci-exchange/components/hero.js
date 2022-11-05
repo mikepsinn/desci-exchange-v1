@@ -7,7 +7,7 @@ export default function Hero() {
         <div className="relative z-30 text-2xl text-white bg-purple-300 bg-opacity-50 text-center">
           <div
             id="{'banner'}"
-            className="relative pt-24 pb-4 text-center banner"
+            className="relative pt-24 pb-4 pl-4 pr-4 text-center banner"
           >
             <img
               height="auto"
